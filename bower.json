@@ -1,0 +1,21 @@
+{
+  "name": "MockGulpApp",
+  "version": "0.0.0",
+  "authors": [
+    "ram33 <ramesh.kumar@applaudsolutions.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "~1.4.5",
+    "angular-route": "~1.4.5",
+    "underscore": "~1.8.3",
+    "toastr": "~2.1.2"
+  }
+}
