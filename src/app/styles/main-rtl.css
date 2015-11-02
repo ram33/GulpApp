@@ -76,7 +76,7 @@ body {
 }
 
 header {
-  background-color: red;
+  background-color: blue;
   display: block;
   height: 60px;
   line-height: 60px;
@@ -167,7 +167,7 @@ section#content-main > .sidebar ul > li > a {
 }
 
 section#content-main > .sidebar ul > li.active > a {
-  color: red;
+  color: blue;
 }
 
 /*GRID*/

@@ -127,7 +127,7 @@ gulp.task('wiredep', function () {
  .pipe(gulp.dest(config.client));
  });*/
 
-gulp.task('optimize', ['styles', 'templatecache', 'fonts', 'images', 'svg'], function () {
+gulp.task('build', ['styles', 'templatecache', 'fonts', 'images', 'svg'], function () {
   log('Optimizing javascript, css and html');
   var assets = $.useref.assets();
   var templateCache = config.temp + config.templateCache.file;
@@ -164,8 +164,25 @@ gulp.task('serve', ['styles'], function () {
   serve(true);
 });
 
-gulp.task('serve-build', ['optimize'], function () {
+gulp.task('serve-build', ['build'], function () {
   serve(false);
+});
+
+
+gulp.task('patch', function () {
+  return inc('patch');
+});
+gulp.task('feature', function () {
+  return inc('minor');
+});
+gulp.task('release', function () {
+  return inc('major');
+});
+
+gulp.task('zip', ['build'], function () {
+  return gulp.src('./dist/**/*.*')
+    .pipe($.zip('dist.zip'))
+    .pipe(gulp.dest('dist'));
 });
 
 ////////////////////////
@@ -217,7 +234,7 @@ function startBrowserSync(isDev) {
     gulp.watch([config.less], ['styles'])
       .on('change', changeEvent);
   } else {
-    gulp.watch([config.less, config.js, config.html], ['optimize', browserSync.reload])
+    gulp.watch([config.less, config.js, config.html], ['build', browserSync.reload])
       .on('change', changeEvent);
   }
 
@@ -259,4 +276,25 @@ function log(msg) {
   } else {
     $.util.log($.util.colors.blue(msg));
   }
+}
+
+function inc(importance) {
+  var versionFilesFilter = $.filter(['package.json', 'bower.json'], {restore: true});
+
+  return gulp.src('**/*.*')
+    .pipe($.excludeGitignore())
+    .pipe(versionFilesFilter)
+    .pipe($.bump({type: importance}))
+    .pipe(gulp.dest('./'))
+    .pipe(versionFilesFilter.restore)
+    //.pipe($.git.add({args: '.'}))
+    .pipe($.git.commit('bumps package version', {emitData:true}))
+    .on('data',function(data) {
+      console.log(data);
+    })
+    .pipe($.git.push('origin', 'master', function (err) {
+      if (err) throw err;
+    }))
+    .pipe($.filter('package.json'))
+    .pipe($.tagVersion());
 }
