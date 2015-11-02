@@ -289,9 +289,6 @@ function inc(importance) {
     .pipe(versionFilesFilter.restore)
     //.pipe($.git.add({args: '.'}))
     .pipe($.git.commit('bumps package version', {emitData:true}))
-    .on('data',function(data) {
-      console.log(data);
-    })
     .pipe($.git.push('origin', 'master', function (err) {
       if (err) throw err;
     }))
