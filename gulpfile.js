@@ -189,7 +189,7 @@ gulp.task('tag', function () {
   var pkg = require('./package.json');
   var v = 'v' + pkg.version;
   var message = 'Release ' + v;
-
+  console.log(message);
   return gulp.src('./')
     .pipe($.git.commit(message))
     .pipe($.git.tag(v, message))
