@@ -190,11 +190,11 @@ gulp.task('tag', function () {
   var v = 'v' + pkg.version;
   var message = 'Release ' + v;
   console.log(message);
-  return gulp.src('./')
+  return gulp.src('./**/*.*')
+    .pipe($.excludeGitignore())
     .pipe($.git.commit(message))
     .pipe($.git.tag(v, message))
-    .pipe($.git.push('origin', 'master', {args: '--tags'}))
-    .pipe(gulp.dest('./'));
+    .pipe($.git.push('origin', 'master', {args: '--tags'}));
 });
 
 gulp.task('zip', ['build'], function () {
