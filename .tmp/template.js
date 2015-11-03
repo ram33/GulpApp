@@ -1,3 +1,3 @@
-angular.module("app.core").run(["$templateCache", function($templateCache) {$templateCache.put("module2/module2.tpl.html","<h3>{{title}}</h3><p>{{description}}</p><p>{{description}}</p>");
-$templateCache.put("module1/module1.tpl.html","<h3>{{title}}</h3><p>{{description}}</p><div class=img></div>");
+angular.module("app.core").run(["$templateCache", function($templateCache) {$templateCache.put("module1/module1.tpl.html","<h3>{{title}}</h3><p>{{description}}</p><div class=img></div>");
+$templateCache.put("module2/module2.tpl.html","<h3>{{title}}</h3><p>{{description}}</p><p>{{description}}</p>");
 $templateCache.put("module3/module3.tpl.html","<h3>{{title}}</h3><p>{{description}}</p><img src=styles/img/svg.svg alt=\"Kiwi standing on oval\"><p>{{description}}</p>");}]);

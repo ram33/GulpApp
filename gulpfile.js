@@ -13,9 +13,9 @@ gulp.task('default', ['help']);
 gulp.task('jshint', function () {
   log('Analyzing source with JSHint and JSCS');
   return gulp.src([
-    'src/app/**/*.js',
-    '!src/app/bower_components/**/*.js'
-  ])
+      'src/app/**/*.js',
+      '!src/app/bower_components/**/*.js'
+    ])
     .pipe($.if(args.verbose, $.print()))
     .pipe($.jscs())
     .pipe($.jshint())
@@ -179,6 +179,24 @@ gulp.task('release', function () {
   return inc('major');
 });
 
+gulp.task('bump', function () {
+  return gulp.src(['./package.json', './bower.json'])
+    .pipe($.bump())
+    .pipe(gulp.dest('./'));
+});
+
+gulp.task('tag', function () {
+  var pkg = require('./package.json');
+  var v = 'v' + pkg.version;
+  var message = 'Release ' + v;
+
+  return gulp.src('./')
+    .pipe($.git.commit(message))
+    .pipe($.git.tag(v, message))
+    .pipe($.git.push('origin', 'master', '--tags'))
+    .pipe(gulp.dest('./'));
+});
+
 gulp.task('zip', ['build'], function () {
   return gulp.src('./dist/**/*.*')
     .pipe($.zip('dist.zip'))
@@ -281,17 +299,30 @@ function log(msg) {
 function inc(importance) {
   var versionFilesFilter = $.filter(['package.json', 'bower.json'], {restore: true});
 
-  return gulp.src('**/*.*')
-    .pipe($.excludeGitignore())
-    .pipe(versionFilesFilter)
+  return gulp.src(['./package.json', './bower.json'])
     .pipe($.bump({type: importance}))
     .pipe(gulp.dest('./'))
-    .pipe(versionFilesFilter.restore)
-    //.pipe($.git.add({args: '.'}))
-    .pipe($.git.commit('bumps package version', {emitData:true}))
+    .pipe($.filter('package.json'))
+    .pipe($.tagVersion())
+    .pipe($.git.commit('bumps package version'))
     .pipe($.git.push('origin', 'master', function (err) {
       if (err) throw err;
-    }))
-    .pipe($.filter('package.json'))
-    .pipe($.tagVersion());
+    }));
+    /*.pipe($.git.push('origin', 'master', function (err) {
+      if (err) throw err;
+    }))*/;
+
+  /*return gulp.src('**!/!*.*')
+   .pipe($.excludeGitignore())
+   .pipe(versionFilesFilter)
+   .pipe($.bump({type: importance}))
+   .pipe(gulp.dest('./'))
+   .pipe(versionFilesFilter.restore)
+   //.pipe($.git.add({args: '.'}))
+   .pipe($.git.commit('bumps package version', {emitData:true}))
+   .pipe($.git.push('origin', 'master', function (err) {
+   if (err) throw err;
+   }))
+   .pipe($.filter('package.json'))
+   .pipe($.tagVersion());*/
 }
