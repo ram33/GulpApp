@@ -24,18 +24,18 @@
       <file leaf-file-name="main.less" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/app/styles/less/main.less">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-0.0">
               <caret line="0" column="15" selection-start-line="0" selection-start-column="15" selection-end-line="0" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="gulpfile.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/gulpfile.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
-              <caret line="197" column="3" selection-start-line="197" selection-start-column="3" selection-end-line="197" selection-end-column="3" />
+            <state vertical-scroll-proportion="0.7942158">
+              <caret line="217" column="31" selection-start-line="217" selection-start-column="31" selection-end-line="217" selection-end-column="31" />
               <folding>
                 <element signature="e#367#660#0" expanded="false" />
               </folding>
@@ -76,18 +76,8 @@
       <file leaf-file-name="bower.json" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/bower.json">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.0">
+            <state vertical-scroll-proportion="-1.3076923">
               <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/app/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="0.42742857">
-              <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -140,66 +130,6 @@
         <gulpfile-path>$PROJECT_DIR$/gulpfile.js</gulpfile-path>
         <tasks>
           <GulpTaskState>
-            <task-name>help</task-name>
-          </GulpTaskState>
-          <GulpTaskState>
-            <dependencies>
-              <dependency value="help" />
-            </dependencies>
-            <task-name>default</task-name>
-          </GulpTaskState>
-          <GulpTaskState>
-            <task-name>jshint</task-name>
-          </GulpTaskState>
-          <GulpTaskState>
-            <dependencies>
-              <dependency value="clean-styles" />
-            </dependencies>
-            <task-name>styles</task-name>
-          </GulpTaskState>
-          <GulpTaskState>
-            <dependencies>
-              <dependency value="clean-fonts" />
-            </dependencies>
-            <task-name>fonts</task-name>
-          </GulpTaskState>
-          <GulpTaskState>
-            <dependencies>
-              <dependency value="clean-images" />
-            </dependencies>
-            <task-name>images</task-name>
-          </GulpTaskState>
-          <GulpTaskState>
-            <dependencies>
-              <dependency value="clean-svg" />
-            </dependencies>
-            <task-name>svg</task-name>
-          </GulpTaskState>
-          <GulpTaskState>
-            <task-name>clean-styles</task-name>
-          </GulpTaskState>
-          <GulpTaskState>
-            <task-name>clean-fonts</task-name>
-          </GulpTaskState>
-          <GulpTaskState>
-            <task-name>clean-code</task-name>
-          </GulpTaskState>
-          <GulpTaskState>
-            <task-name>clean-images</task-name>
-          </GulpTaskState>
-          <GulpTaskState>
-            <task-name>clean-svg</task-name>
-          </GulpTaskState>
-          <GulpTaskState>
-            <dependencies>
-              <dependency value="clean-code" />
-            </dependencies>
-            <task-name>templatecache</task-name>
-          </GulpTaskState>
-          <GulpTaskState>
-            <task-name>wiredep</task-name>
-          </GulpTaskState>
-          <GulpTaskState>
             <dependencies>
               <dependency value="styles" />
               <dependency value="templatecache" />
@@ -208,6 +138,57 @@
               <dependency value="svg" />
             </dependencies>
             <task-name>build</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>bump</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>clean-code</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>clean-fonts</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>clean-images</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>clean-styles</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>clean-svg</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <dependencies>
+              <dependency value="help" />
+            </dependencies>
+            <task-name>default</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>feature</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <dependencies>
+              <dependency value="clean-fonts" />
+            </dependencies>
+            <task-name>fonts</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>help</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <dependencies>
+              <dependency value="clean-images" />
+            </dependencies>
+            <task-name>images</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>jshint</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>patch</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>release</task-name>
           </GulpTaskState>
           <GulpTaskState>
             <dependencies>
@@ -222,13 +203,28 @@
             <task-name>serve-build</task-name>
           </GulpTaskState>
           <GulpTaskState>
-            <task-name>patch</task-name>
+            <dependencies>
+              <dependency value="clean-styles" />
+            </dependencies>
+            <task-name>styles</task-name>
           </GulpTaskState>
           <GulpTaskState>
-            <task-name>feature</task-name>
+            <dependencies>
+              <dependency value="clean-svg" />
+            </dependencies>
+            <task-name>svg</task-name>
           </GulpTaskState>
           <GulpTaskState>
-            <task-name>release</task-name>
+            <task-name>tag</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <dependencies>
+              <dependency value="clean-code" />
+            </dependencies>
+            <task-name>templatecache</task-name>
+          </GulpTaskState>
+          <GulpTaskState>
+            <task-name>wiredep</task-name>
           </GulpTaskState>
           <GulpTaskState>
             <dependencies>
@@ -394,9 +390,9 @@
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info id="Gulp" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.2963362" sideWeight="0.5" order="12" side_tool="true" content_ui="tabs" />
+      <window_info id="Gulp" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.29513514" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Remote Host" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14354323" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.14354323" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -775,14 +771,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/bower.json">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/app/styles/less/main.less">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0">
@@ -799,24 +787,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/gulp.config.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gulpfile.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.0">
-          <caret line="197" column="3" selection-start-line="197" selection-start-column="3" selection-end-line="197" selection-end-column="3" />
-          <folding>
-            <element signature="e#367#660#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/package.json">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="-19.615385">
@@ -830,6 +800,32 @@
         <state vertical-scroll-proportion="0.42742857">
           <caret line="22" column="50" selection-start-line="22" selection-start-column="50" selection-end-line="22" selection-end-column="50" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/bower.json">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="-1.3076923">
+          <caret line="2" column="15" selection-start-line="2" selection-start-column="15" selection-end-line="2" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulp.config.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0">
+          <caret line="7" column="4" selection-start-line="7" selection-start-column="4" selection-end-line="7" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/gulpfile.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.7942158">
+          <caret line="217" column="31" selection-start-line="217" selection-start-column="31" selection-end-line="217" selection-end-column="31" />
+          <folding>
+            <element signature="e#367#660#0" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
